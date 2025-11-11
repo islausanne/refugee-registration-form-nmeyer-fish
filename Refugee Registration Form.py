@@ -1,14 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for, flash
+import json
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the Homepage!"
+    return render_template("index.html")
 
-@app.route('/about')
-def about():
-    return "This is the About Page."
+@app.route('/register')
+def register():
+    name = request.form['name']
+    email = request.form['email']
+    return f"Thank you, {name}. Your email address is {email}."
+
 
 @app.route('/contact')
 def contact():

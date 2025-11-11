@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <label class="container">One
+      <input type="checkbox" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">Two
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+</body>
+
+</html>
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Refugee Registration Form</h2>
+<form method="POST" action="{{ url_for('submit_form') }}">
+  <p><input type="text" name="name" placeholder="Full name" required></p>
+  <p><input type="text" name="country" placeholder="Country of origin" required></p>
+  <p><input type="number" name="age" placeholder="Age" required></p>
+  <p><button type="submit">Submit</button></p>
+<p><b
+   £_
+</form>
+{% endblock %}
