@@ -2,6 +2,11 @@
   {
     "name": "",
     "country": "",
-    "age": ""
+    "age": "",
+    "email":"",
+    "gender": "",
+    "date_of_birth":"",
+    "phone": "",
+    "nationality": ""
   }
 ]

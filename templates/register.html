@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-
-<body>
-    <label class="container">One
-      <input type="checkbox" checked="checked">
-      <span class="checkmark"></span>
-    </label>
-
-    <label class="container">Two
-      <input type="checkbox">
-      <span class="checkmark"></span>
-    </label>
-</body>
-
-</html>
-
 {% extends 'base.html' %}
 {% block content %}
 <h2>Refugee Registration Form</h2>
@@ -26,6 +5,16 @@
   <p><input type="text" name="name" placeholder="Full name" required></p>
   <p><input type="text" name="country" placeholder="Country of origin" required></p>
   <p><input type="number" name="age" placeholder="Age" required></p>
+  <p><input type="email" name="email" placeholder="email" required></p>
+
+  <input type="radio" id='male' name="gender" value="Male" required>
+  <label for="male">Male</label><br>
+  <input type="radio" name="gender" id='female' value="Female" required>
+  <label for="female">Female</label><br>
+  <input type="radio" name="gender" id='other' value="Other" required>
+  <label for="other">Other</label><br>
+
+    <p><input type="date" id="birthday" name="birthday"></p>
   <p><button type="submit">Submit</button></p>
 <p><b
    £_

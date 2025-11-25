@@ -3,39 +3,11 @@ import json
 import os
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template("index.html")
-
-@app.route('/register')
-def register():
-    name = request.form['name']
-    email = request.form['email']
-    return f"Thank you, {name}. Your email address is {email}."
-
-
-@app.route('/contact')
-def contact():
-    return "Contact us at: info@example.com."
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-
-
-
-from flask import Flask, render_template, request, redirect, url_for, flash
-import json
-import os
-
-app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Needed for flash messages
 
 # Home route
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
 # Registration form page
@@ -49,6 +21,12 @@ def submit_form():
     name = request.form['name']
     country = request.form['country']
     age = request.form['age']
+    email = request.form['email']
+    gender = request.form['gender']
+    date_of_birth = request.form['date_of_birth']
+    phone = request.form['phone']
+    nationality = request.form['nationality']
+
 
     # Check if file exists
     if os.path.exists('registrations.json'):
@@ -58,7 +36,8 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'name': name, 'country': country, 'age': age})
+    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth\
+                'phone':phone, 'nationality': nationality})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
@@ -75,6 +54,6 @@ def view_registrations():
 
 if __name__ == '__main__':
     app.run(debug=True)
-k
+
 
 
