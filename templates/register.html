@@ -2,19 +2,19 @@
 {% block content %}
 <h2>Refugee Registration Form</h2>
 <form method="POST" action="{{ url_for('submit_form') }}">
-  <p><input type="text" name="name" placeholder="Full name" required></p>
+  <p><input type="text" name="name" placeholder="e.g ()" required></p>
   <p><input type="text" name="country" placeholder="Country of origin" required></p>
   <p><input type="number" name="age" placeholder="Age" required></p>
   <p><input type="email" name="email" placeholder="email" required></p>
 
   <input type="radio" id='male' name="gender" value="Male" required>
-  <label for="male">Male</label><br>
+  <label for="male">Male</label>
   <input type="radio" name="gender" id='female' value="Female" required>
   <label for="female">Female</label><br>
-  <input type="radio" name="gender" id='other' value="Other" required>
-  <label for="other">Other</label><br>
 
-    <p><input type="date" id="birthday" name="birthday"></p>
+  <p><input type="text" name="phone" placeholder="(+00) 000 00 000" required></p>
+
+    <p><input type="date" id="date_of_birth" name="date_of_birth"></p>
   <p><button type="submit">Submit</button></p>
 <p><b
    £_

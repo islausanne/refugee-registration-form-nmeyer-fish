@@ -7,7 +7,7 @@ app.secret_key = 'supersecretkey'  # Needed for flash messages
 
 # Home route
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 # Registration form page
@@ -25,7 +25,6 @@ def submit_form():
     gender = request.form['gender']
     date_of_birth = request.form['date_of_birth']
     phone = request.form['phone']
-    nationality = request.form['nationality']
 
 
     # Check if file exists
@@ -36,8 +35,8 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth\
-                'phone':phone, 'nationality': nationality})
+    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth, \
+                 'phone':phone})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
