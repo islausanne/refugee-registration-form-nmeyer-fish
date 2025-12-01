@@ -18,7 +18,8 @@ def register():
 # Handle form submission (students will add JSON save code here)
 @app.route('/submit', methods=['POST'])
 def submit_form():
-    name = request.form['name']
+    first_name = request.form['first_name']
+    sur_name = request.form['sur_name']
     country = request.form['country']
     age = request.form['age']
     email = request.form['email']
@@ -35,7 +36,7 @@ def submit_form():
         data = []
 
     # Add the new registration
-    data.append({'name': name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth, \
+    data.append({'first_name': first_name, 'sur_name':sur_name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth, \
                  'phone':phone})
 
     # Save all registrations back to the file
