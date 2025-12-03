@@ -1,25 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Refugee Registration Form</h2>
+<h5>Personal Information</h5>
 <form method="POST" action="{{ url_for('submit_form') }}">
-  <label> First Name: </label>
-  <input type="text" name="first_name" placeholder="e.g (Mat)" required>
-  <h5> Sur Name: </h5>
-  <input type="text" name="Sur_name" placeholder="e.g (Mat)" required>
-  <p><input type="text" name="country" placeholder="Country of origin" required></p>
-  <p><input type="number" name="age" placeholder="Age" required></p>
-  <p><input type="email" name="email" placeholder="email" required></p>
+  <label> First.name: </label>
+  <input type="text" name="first_name" placeholder="e.g (Mat)" required><p>
+  <label> Sur.Name: </label>
+  <input type="text" name="Sur_name" placeholder="e.g (Mat)" required><p>
+  <label> Nationality: </label>
+  <input type="text" name="country" placeholder="Country of origin" required></p>
+  <label> Age: </label>
+  <input type="number" name="age" placeholder="Age" required></p>
+  <label> Date.of.Birth: </label>
+  <input type="date" id="date_of_birth" name="date_of_birth"></p>
 
-  <input type="radio" id='male' name="gender" value="Male" required>
-  <label for="male">Male</label>
-  <input type="radio" name="gender" id='female' value="Female" required>
-  <label for="female">Female</label><br>
+  <label for="male">Male:</label>
+  <input type="radio" id='male' name="gender" value="Male" required><br>
+  <label for="female">Female:</label>
+  <input type="radio" name="gender" id='female' value="Female" required><p>
 
-  <p><input type="text" name="phone" placeholder="(+00) 000 00 000" required></p>
+<h5>Contact Information</h5>
 
-    <p><input type="date" id="date_of_birth" name="date_of_birth"></p>
+  <label> Email: </label>
+  <input type="email" name="email" placeholder="email" required></p>
+  <label> Phone.Number: </label>
+  <input type="text" name="phone" placeholder="(+00) 000 00 000" required></p>
+
+
+  <h5>Medical Information</h5>
+
+
+  <h5>Other Inforamtion</h5>
+
+
   <p><button type="submit">Submit</button></p>
-<p><b
+
    £_
 </form>
 {% endblock %}
