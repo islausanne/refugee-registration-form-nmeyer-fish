@@ -26,6 +26,18 @@ def submit_form():
     gender = request.form['gender']
     date_of_birth = request.form['date_of_birth']
     phone = request.form['phone']
+    medical_info = request.form['medical_info']
+    other_info = request.form['other_info']
+
+    if len(first_name) or len(first_name) > 3:
+        flash('First name must be at least 3 characters')
+        return redirect(url_for('register'))
+    if phone > 7 or phone < 15:
+        flash('Phone must be between 15 and 7 digits')
+        return redirect(url_for('register'))
+
+    if date_of_birth != age:
+        flash('Age does not correspond to your birthday')
 
 
     # Check if file exists
@@ -37,7 +49,7 @@ def submit_form():
 
     # Add the new registration
     data.append({'first_name': first_name, 'sur_name':sur_name, 'country': country, 'age': age, 'email': email, 'gender': gender, 'date_of_birth': date_of_birth, \
-                 'phone':phone})
+                 'phone':phone, 'medical_info':medical_info, 'other_info':other_info})
 
     # Save all registrations back to the file
     with open('registrations.json', 'w') as file:
