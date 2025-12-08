@@ -4,13 +4,22 @@
 {% if registrations %}
   <table>
     <tr>
-      <th>Name</th>
+      <th>First Name</th>
       <th>Country</th>
       <th>Age</th>
       <th>Email</th>
+      <th>dat_of_birth</th>
+      <th>phone</th>
+      <th>Sur Name</th>
+      <th>Email</th>
+
     </tr>
     {% for person in registrations %}
       <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.country }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.email }}</td>
         <td>{{ person.name }}</td>
         <td>{{ person.country }}</td>
         <td>{{ person.age }}</td>
