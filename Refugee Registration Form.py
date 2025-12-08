@@ -40,6 +40,8 @@ def submit_form():
         flash('Age does not correspond to your birthday')
 
 
+
+
     # Check if file exists
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
